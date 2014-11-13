@@ -1,0 +1,14 @@
+Package: QuartPAC
+Type: Package
+Title: Identification of mutational clusters in protein quarternary
+        structures.
+Version: 0.99.1
+Date: 2014-09-25
+Author: Gregory Ryslik, Yuwei Cheng, Hongyu Zhao
+Maintainer: Gregory Ryslik <gregory.ryslik@yale.edu>
+Description: Identifies clustering of somatic mutations in proteins
+        over the entire quarternary structure.
+License: GPL-2
+biocViews: Clustering, Proteomics, SomaticMutation
+Depends: iPAC, GraphPAC, SpacePAC, data.table
+Suggests: RUnit, BiocGenerics, rgl

@@ -30,7 +30,7 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
-  \title{\QuartPAC{}: Identifying mutational clusters while utilizing protein quarternary structural data }
+  \title{\QuartPAC{}: Identifying mutational clusters while utilizing protein quaternary structural data }
   \author{Gregory Ryslik  \\ Genentech  \\ gregory.ryslik@yale.edu
         \and
           Yuwei Cheng  \\ Yale University \\ yuwei.cheng@yale.edu
@@ -43,25 +43,25 @@
   
 \end{abstract}
 
-  The \QuartPAC{} package is designed to identify mutated amino acid hotspots while accounting for protein quarternary structure. It is meant to work in conjunction with the \iPAC{} \citep{iPAC}, \GraphPAC{} \citep{GraphPAC} and \SpacePAC{} \citep{SpacePAC} packages already available through Bioconductor. Spercifically, the package takes as input the quarternary protein structure as well as the mutational data for each subunit of the assembly. It then maps the mutational data onto the protein and performs the algorithms described in \iPAC{}, \GraphPAC and \SpacePAC{} to report the statistically significanct clusters. By integrating the quartneray structure, \QuartPAC{} may identify additional clusters that only become apparent when the different protein subunits are considered together.
+  The \QuartPAC{} package is designed to identify mutated amino acid hotspots while accounting for protein quaternary structure. It is meant to work in conjunction with the \iPAC{} \citep{iPAC}, \GraphPAC{} \citep{GraphPAC} and \SpacePAC{} \citep{SpacePAC} packages already available through Bioconductor. Spercifically, the package takes as input the quaternary protein structure as well as the mutational data for each subunit of the assembly. It then maps the mutational data onto the protein and performs the algorithms described in \iPAC{}, \GraphPAC and \SpacePAC{} to report the statistically significanct clusters. By integrating the quartneray structure, \QuartPAC{} may identify additional clusters that only become apparent when the different protein subunits are considered together.
   
   % As described by \citep{wagner_rapid_2007, zhou_detecting_2008,ye_2010,ipac_paper_2013,graphpac_paper_2013,spacepac_paper_2014}, mutational clustering may be a sign of positive selection of protein function and/or activating driver mutations. 
   
 
 \section{Introduction} \label{intro}
 
-Recent advances in oncogenic pharmacology \citep{croce_oncogenes_2008} have led to the creation of a variety of methods that attempt to identify mutational hotspots as these hotspots are often indicative of driver mutations \citep{wagner_rapid_2007, zhou_detecting_2008,ye_2010}. Three recent methods, \iPAC{}, \GraphPAC{} and \SpacePAC{} provide approaches to identify such hotspots while accounting for protein tertiary structure. While it has been shown that these mutations provide an improvement over linear clustering methods, \citep{ipac_paper_2013,graphpac_paper_2013,spacepac_paper_2014}, they nevertheless consider only tertiary structure. \QuartPAC, preprocesses the entire assembly structure in order to be able to accurately run these approaches on the quarternary protein unit. This allows for the identification of additional mutational clusters that may otherwise be missed if only one protein subunit is considered at a time.
+Recent advances in oncogenic pharmacology \citep{croce_oncogenes_2008} have led to the creation of a variety of methods that attempt to identify mutational hotspots as these hotspots are often indicative of driver mutations \citep{wagner_rapid_2007, zhou_detecting_2008,ye_2010}. Three recent methods, \iPAC{}, \GraphPAC{} and \SpacePAC{} provide approaches to identify such hotspots while accounting for protein tertiary structure. While it has been shown that these mutations provide an improvement over linear clustering methods, \citep{ipac_paper_2013,graphpac_paper_2013,spacepac_paper_2014}, they nevertheless consider only tertiary structure. \QuartPAC, preprocesses the entire assembly structure in order to be able to accurately run these approaches on the quaternary protein unit. This allows for the identification of additional mutational clusters that may otherwise be missed if only one protein subunit is considered at a time.
 
 %Continue here
 In order to run \QuartPAC, four sources of data are required:
 \begin{itemize}
 \item The amino acid sequence of the protein which is obtained from the UniProt database (\url{uniprot.org} in FASTA format). 
 \item The protein tertiary subunit information which is obtained from the .pdb file from \url{PDB.org}
-\item The quarternary structural information for the entire assembly which is obtained from the .pdb1 file from \url{PDB.org}
+\item The quaternary structural information for the entire assembly which is obtained from the .pdb1 file from \url{PDB.org}
 \item The somatic mutation data which is obtained from the Catalogue of Somatic Mutations in Cancer (\url{http://cancer.sanger.ac.uk/cancergenome/projects/cosmic/}).
 \end{itemize}
 
-In order to map the mutations onto the protein quarternary structure, an alignment must be performed. For each uniprot within the assembly, mutational data must be provided. The data is in the format of $m \times n$ matrices for every subunit. A ``1" in the $(i,j)$ element indicates that residue $j$ for individual $i$ has a mutation while a ``0" indiciates no mutation. To be compatible with this software, please ensure that your mutation matrices have R column headings of $V1, V2,\cdots, Vn$. Only missense mutations are currently supported, indels in the amino acid sequence are not. Sample mutational data are included in this package as textfiles in the \emph{extdata} folder. 
+In order to map the mutations onto the protein quaternary structure, an alignment must be performed. For each uniprot within the assembly, mutational data must be provided. The data is in the format of $m \times n$ matrices for every subunit. A ``1" in the $(i,j)$ element indicates that residue $j$ for individual $i$ has a mutation while a ``0" indiciates no mutation. To be compatible with this software, please ensure that your mutation matrices have R column headings of $V1, V2,\cdots, Vn$. Only missense mutations are currently supported, indels in the amino acid sequence are not. Sample mutational data are included in this package as textfiles in the \emph{extdata} folder. 
 
 It is worth nothing that there does not exist any one individual source to obtain mutational data. One common resource is the COSMIC database \url{http://cancer.sanger.ac.uk/cancergenome/projects/cosmic/}. The easiest way to obtain mutational data for many proteins is to load the the COSMIC database on a local sql server and then query the database for the protein of interest. It is important to restrict your query to whole gene screens or whole genome studies to prevent specific mutations from being selectively chosen (and thus violating the uniformity assumption that \iPAC, \GraphPAC, and \SpacePAC{} rely upon).
 

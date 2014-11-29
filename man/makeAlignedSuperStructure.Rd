@@ -4,7 +4,7 @@
 Create Protein Assembly Information
 }
 \description{
-Reads the information in the PDB files to build the quarternary structure.
+Reads the information in the PDB files to build the quaternary structure.
 }
 \usage{
 makeAlignedSuperStructure(PDB_location, Assembly_location)

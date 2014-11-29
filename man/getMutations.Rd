@@ -5,21 +5,21 @@
 Get Mutational Data
 }
 \description{
-Reads the mutation matrices and fasta information for each protein subunit within the quarternary structure.
+Reads the mutation matrices and fasta information for each protein subunit within the quaternary structure.
 }
 \usage{
 getMutations(mutation_files, uniprots)
 }
 \arguments{
   \item{mutation_files}{
-A list of strings where each string is the path to a mutation matrix. A mutation matrix is a matrix of 0's (no mutation) and 1's (mutation). Each column represents a specific amino acid in the protein and each row represents an individual sample (test subject, cell line, etc). If column i in row j had a 1, that would mean that the ith amino acid for person j had a nonsynonomous mutation. As the quarternary structure can be comprised of several proteins (each with their unique uniprot id), each matrix represents the protein referenced by a specific uniprot identifier.
+A list of strings where each string is the path to a mutation matrix. A mutation matrix is a matrix of 0's (no mutation) and 1's (mutation). Each column represents a specific amino acid in the protein and each row represents an individual sample (test subject, cell line, etc). If column i in row j had a 1, that would mean that the ith amino acid for person j had a nonsynonomous mutation. As the quaternary structure can be comprised of several proteins (each with their unique uniprot id), each matrix represents the protein referenced by a specific uniprot identifier.
 }
   \item{uniprots}{
 A list of uniprots. The list provides the uniprot id for each of the matrices described in the \emph{mutation.data} parameter. 
 }
 }
 \details{
-The ordering in both \emph{mutation_files} and \emph{uniprots} must be the identical. For example, suppose that the quarternary structure is comprised of two proteins, A and B. If the first element in \emph{mutation_files} points to the mutation matrix for protein A, that means that the first element of \emph{uniprots}, must be a string with the uniprot id of protein A. 
+The ordering in both \emph{mutation_files} and \emph{uniprots} must be the identical. For example, suppose that the quaternary structure is comprised of two proteins, A and B. If the first element in \emph{mutation_files} points to the mutation matrix for protein A, that means that the first element of \emph{uniprots}, must be a string with the uniprot id of protein A. 
 }
 \value{
 \item{mut_tables}{A list of the mutation matrices. There should be one mutation matrix for each uniprot id in the entire assembly.}

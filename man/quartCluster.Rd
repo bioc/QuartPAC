@@ -1,10 +1,10 @@
 \name{quartCluster}
 \alias{quartCluster}
 \title{
-Quarternary Protein Structure Clustering Analysis
+Quaternary Protein Structure Clustering Analysis
 }
 \description{
-Perform the clustering analysis over the protein quarternary structure. One can select to use the \pkg{iPAC}, \pkg{GraphPAC} or \pkg{SpacePAC} methods. The output will show the relevant information from each algorithm that was selected.
+Perform the clustering analysis over the protein quaternary structure. One can select to use the \pkg{iPAC}, \pkg{GraphPAC} or \pkg{SpacePAC} methods. The output will show the relevant information from each algorithm that was selected.
 
 }
 \usage{
@@ -71,7 +71,7 @@ The title of the graph to be created.}
 For the \pkg{GraphPAC} package, the heuristic solver for the traveling salesman problem starts the path at a random amino acid. In order to make the results easily reproducible, the default starts the path on the first amino acid in the protein. Please see the \pkg{GraphPAC} package for more details.
 }
   \item{numsims}{
-The number of times to simulate the distribution of mutations over the protein quarternary structure for the \pkg{SpacePAC} algorithm. For each simulation, given m total mutations and n total amino acids, each amino acid has a m/n probability of mutation.
+The number of times to simulate the distribution of mutations over the protein quaternary structure for the \pkg{SpacePAC} algorithm. For each simulation, given m total mutations and n total amino acids, each amino acid has a m/n probability of mutation.
 }
   \item{simMaxSpheres}{
 For the \pkg{SpacePAC} algorithm, the maximum number of spheres to consider. Currently, the implementation allows for simMaxspheres to be either 1, 2 or 3.
@@ -105,7 +105,7 @@ Michael Hahsler and Kurt Hornik (2014). TSP: Traveling Salesperson Problem (TSP)
 \note{
 The clustering results give the \emph{serial number} values from the *.pdb1 file. 
 
-Most of the parameters simply pass the requisite values to the underlying \pkg{iPAC}, \pkg{GraphPAC} and \pkg{SpacePAC} algorithms. The user should be aware of the parameters for these algorithms as this package is designed to extend them to quarternary  structures.
+Most of the parameters simply pass the requisite values to the underlying \pkg{iPAC}, \pkg{GraphPAC} and \pkg{SpacePAC} algorithms. The user should be aware of the parameters for these algorithms as this package is designed to extend them to quaternary  structures.
 }
 \examples{
 \dontrun{
@@ -132,5 +132,5 @@ structural.data <- makeAlignedSuperStructure(pdb.location, assembly.location)
 }
 }
 \keyword{protein}
-\keyword{quarternary}
+\keyword{quaternary}
 \keyword{clustering}

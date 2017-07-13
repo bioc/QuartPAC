@@ -32,8 +32,8 @@ This functionality is still in beta. The user is encouraged to check the alignme
 
 \examples{
 #read the pdb file
-pdb.location <- "http://www.rcsb.org/pdb/files/1A6Z.pdb"
-assembly.location <- "http://www.rcsb.org/pdb/files/1A6Z.pdb1"
+pdb.location <- "https://files.rcsb.org/view/1A6Z.pdb"
+assembly.location <- "https://files.rcsb.org/download/1A6Z.pdb1"
 
 
 (alignment.results <- makeAlignedSuperStructure(pdb.location, assembly.location))

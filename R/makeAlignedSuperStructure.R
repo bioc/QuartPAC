@@ -1,5 +1,6 @@
 makeAlignedSuperStructure <-
 function(PDB_location, Assembly_location){
+  
   alignment_details<- makeAlignmentMaps(PDB_location, Assembly_location) #gets a list of the alignment information, entire structure, and unprots
 
   #We now will make a new structure with the canonical positions appended for only the positions where canonical= pdb

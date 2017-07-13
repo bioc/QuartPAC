@@ -1,6 +1,5 @@
 createPositionMatrix <-
 function(PDB_location, Assembly_location, requiredAtom = "CA"){
-  
   pdb_file <- readLines(PDB_location)
   assembly_file <- readLines(Assembly_location)
   

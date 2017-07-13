@@ -29,8 +29,8 @@ test_quartCluster <- function() {
   #########
   #check the structural data data is outputted as expected for typical example
   #########
-  pdb.location <- "http://www.rcsb.org/pdb/files/1A6Z.pdb"
-  assembly.location <- "http://www.rcsb.org/pdb/files/1A6Z.pdb1"
+  pdb.location <- "https://files.rcsb.org/view/1A6Z.pdb"
+  assembly.location <- "https://files.rcsb.org/download/1A6Z.pdb1"
   structural.data <- makeAlignedSuperStructure(pdb.location, assembly.location)
   
   #Begin Checks

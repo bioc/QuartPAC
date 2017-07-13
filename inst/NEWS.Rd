@@ -5,4 +5,11 @@
     \item First release of the QuartPAC package.
     \item Currently supports the iPAC, GraphPAC and SpacePAC packages when extending clustering results to quarternary data. 
   }
+
+}
+\section{Release Notes for version 1.8.1 - 2017.07.12}{
+  \itemize{
+    \item Bug fix to support new pdb file locations.
+  }
+
 }

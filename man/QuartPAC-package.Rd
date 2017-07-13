@@ -41,8 +41,8 @@ uniprots <- list("Q30201","P61769")
 mutation.data <- getMutations(mutation_files = mutation_files, uniprots = uniprots)
 
 #read the pdb file
-pdb.location <- "http://www.rcsb.org/pdb/files/1A6Z.pdb"
-assembly.location <- "http://www.rcsb.org/pdb/files/1A6Z.pdb1"
+pdb.location <- "https://files.rcsb.org/view/1A6Z.pdb"
+assembly.location <- "https://files.rcsb.org/download/1A6Z.pdb1"
 structural.data <- makeAlignedSuperStructure(pdb.location, assembly.location)
 
 #Perform Analysis

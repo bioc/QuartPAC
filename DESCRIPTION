@@ -2,7 +2,7 @@ Package: QuartPAC
 Type: Package
 Title: Identification of mutational clusters in protein quaternary
         structures.
-Version: 1.11.0
+Version: 1.12.0
 Date: 2017-07-12
 Author: Gregory Ryslik, Yuwei Cheng, Hongyu Zhao
 Maintainer: Gregory Ryslik <gregory.ryslik@yale.edu>

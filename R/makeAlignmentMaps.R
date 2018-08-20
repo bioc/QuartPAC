@@ -6,7 +6,7 @@ function(PDB_location, Assembly_location){
   dbrefs <- as.numeric(dbrefs[which(dbrefs != "NA")])
   uniprots <- unlist(lapply(dbrefs, function(x){protein_structure[which(protein_structure$dbref ==x),]$UNP[1]}))
   alignment_maps <- lapply(dbrefs, function(x){ 
-                        current_fasta <- sprintf("http://www.uniprot.org/uniprot/%s.fasta",toString(uniprots[x]) )
+                        current_fasta <- sprintf("https://www.uniprot.org/uniprot/%s.fasta",toString(uniprots[x]) )
                         current_meta_structure <- protein_structure[which(protein_structure$dbref == dbrefs[x]),]
     
                         #Now we break up the current_structure by protomer -- in case one dbref has multiple protomers

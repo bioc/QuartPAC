@@ -2,7 +2,7 @@ getMutations <-
 function(mutation_files, uniprots){
   mutation_data <- lapply(mutation_files, function(x){read.table(x, header= FALSE, sep = " ")})
   mutation_data <- lapply(mutation_data, function(x){as.matrix(x)}) #convert into matrices
-  fastas <- lapply(uniprots, function(x){ get.AASeq(sprintf("http://www.uniprot.org/uniprot/%s.fasta",x))})
+  fastas <- lapply(uniprots, function(x){ get.AASeq(sprintf("https://www.uniprot.org/uniprot/%s.fasta",x))})
   aa_counts <- unlist(lapply(mutation_data, function(x){dim(x)[2]}))
   mutation_counts <- unlist(lapply(mutation_data, function(x){sum(x)}))
   canonical_lengths <- unlist(lapply(fastas, function(x){length(x)}))

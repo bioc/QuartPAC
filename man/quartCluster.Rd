@@ -108,7 +108,7 @@ The clustering results give the \emph{serial number} values from the *.pdb1 file
 Most of the parameters simply pass the requisite values to the underlying \pkg{iPAC}, \pkg{GraphPAC} and \pkg{SpacePAC} algorithms. The user should be aware of the parameters for these algorithms as this package is designed to extend them to quaternary  structures.
 }
 \examples{
-\dontrun{
+
 #read the mutational data
 mutation_files <- list(
         system.file("extdata","HFE_Q30201_MutationOutput.txt", package = "QuartPAC"),
@@ -121,7 +121,7 @@ mutation.data <- getMutations(mutation_files = mutation_files, uniprots = unipro
 pdb.location <- "https://files.rcsb.org/view/1A6Z.pdb"
 assembly.location <- "https://files.rcsb.org/download/1A6Z.pdb1"
 structural.data <- makeAlignedSuperStructure(pdb.location, assembly.location)
-
+\dontrun{
 #Perform Analysis
 #We use a very high alpha level here with no multiple comparison adjustment
 #to make sure that each method provides shows a result.

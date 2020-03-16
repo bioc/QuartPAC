@@ -39,11 +39,11 @@ test_quartCluster <- function() {
   checkEquals(dim(structural.data$aligned_structure)[2], 20)
   checkEquals(dim(structural.data$aligned_structure)[1], 371)
   checkEquals(dim(structural.data$aligned_structure)[2], 20)
-  checkEquals(structural.data$uniprots[1], "Q30201")
-  checkEquals(structural.data$uniprots[2], "P61769")
+  checkEquals(structural.data$uniprots[2], "Q30201")
+  checkEquals(structural.data$uniprots[1], "P61769")
   #check uniprots match in mutations and structural data
-  checkEquals(mutation.data$uniprots[1], structural.data$uniprots[1])
-  checkEquals(mutation.data$uniprots[2], structural.data$uniprots[2])
+  checkEquals(mutation.data$uniprots[1], structural.data$uniprots[2])
+  checkEquals(mutation.data$uniprots[2], structural.data$uniprots[1])
   
   
   ####

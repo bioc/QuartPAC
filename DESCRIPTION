@@ -1,9 +1,9 @@
 Package: QuartPAC
 Type: Package
 Title: Identification of mutational clusters in protein quaternary
-        structures.
-Version: 1.35.0
-Date: 2020-03-16
+        structures
+Version: 1.35.1
+Date: 2024-04-23
 Author: Gregory Ryslik, Yuwei Cheng, Hongyu Zhao
 Maintainer: Gregory Ryslik <gregory.ryslik@yale.edu>
 Description: Identifies clustering of somatic mutations in proteins
@@ -11,4 +11,5 @@ Description: Identifies clustering of somatic mutations in proteins
 License: GPL-2
 biocViews: Clustering, Proteomics, SomaticMutation
 Depends: iPAC, GraphPAC, SpacePAC, data.table
+Imports: Biostrings, pwalign
 Suggests: RUnit, BiocGenerics, rgl
